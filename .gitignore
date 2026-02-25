@@ -1,0 +1,17 @@
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+.vim/plugged/
+
+# Neovim
+nvim/plugged/
+nvim/.netrwhist
+
+# CoC
+nvim/coc-extensions/
+
+# OS
+.DS_Store
+Thumbs.db
