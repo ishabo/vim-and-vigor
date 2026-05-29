@@ -18,6 +18,13 @@ set number                      " Show line numbers
 set modifiable                  " Allow buffer modification
 
 " -----------------------------------------------------------------------------
+" Auto-Save
+" -----------------------------------------------------------------------------
+set autowrite                   " Auto-save on buffer switch, :make, etc.
+set autowriteall                " Auto-save on all buffer-leaving events
+autocmd FocusLost * silent! wa  " Auto-save all buffers when Vim loses focus
+
+" -----------------------------------------------------------------------------
 " Indentation
 " -----------------------------------------------------------------------------
 set smarttab
@@ -100,5 +107,6 @@ set directory^=$HOME/.vim/tmp//
 " -----------------------------------------------------------------------------
 " CoC-specific Settings
 " -----------------------------------------------------------------------------
+let g:copilot_npx_command = 0
 let g:coc_node_path = substitute(system('which node'), '\n', '', '')
 set runtimepath^=~/.coc-extensions/coc-solidity/packages/coc-solidity
