@@ -17,34 +17,34 @@ catch /^Vim\%((\_a\+)\)\=:E185/
   colorscheme default
 endtry
 
-" -----------------------------------------------------------------------------
-" Highlight Settings
-" -----------------------------------------------------------------------------
-highlight ExtraWhitespace ctermbg=white guibg=white
-highlight ColorColumn ctermbg=0 guibg=LightGrey
+ " -----------------------------------------------------------------------------
+" " Highlight Settings
+" " -----------------------------------------------------------------------------
+" highlight ExtraWhitespace ctermbg=white guibg=white
+" highlight ColorColumn ctermbg=0 guibg=LightGrey
 highlight StatusLine ctermfg=white ctermbg=blue guifg=#ffffff guibg=#0000ff
 
-" Match trailing whitespace
+" " Match trailing whitespace
 match ExtraWhitespace /\s\+\%#\@<!$/
 
-" -----------------------------------------------------------------------------
-" Dynamic Theme Adjustments
-" -----------------------------------------------------------------------------
-function! AdjustColorscheme()
-  let l:scheme = g:colors_name
+" " -----------------------------------------------------------------------------
+" " Dynamic Theme Adjustments
+" " -----------------------------------------------------------------------------
+" function! AdjustColorscheme()
+"   let l:scheme = g:colors_name
   
-  " Gruvbox-specific adjustments
-  if l:scheme ==# 'gruvbox'
-    " Subtle adjustments for better readability
-    highlight CursorLine guibg=#3c3836
-    highlight Visual guibg=#504945
-  endif
-endfunction
+"   " Gruvbox-specific adjustments
+"   if l:scheme ==# 'gruvbox'
+"     " Subtle adjustments for better readability
+"     highlight CursorLine guibg=#3c3836
+"     highlight Visual guibg=#504945
+"   endif
+" endfunction
 
-" Run when colorscheme changes
-autocmd ColorScheme * call AdjustColorscheme()
-" Run on startup
-autocmd VimEnter * call AdjustColorscheme()
+" " Run when colorscheme changes
+" autocmd ColorScheme * call AdjustColorscheme()
+" " Run on startup
+" autocmd VimEnter * call AdjustColorscheme()
 
 " -----------------------------------------------------------------------------
 " Dim Inactive Windows

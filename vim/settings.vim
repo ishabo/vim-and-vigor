@@ -70,7 +70,7 @@ set splitright                 " New vertical splits open to the right
 " -----------------------------------------------------------------------------
 " Performance
 " -----------------------------------------------------------------------------
-set updatetime=300             " Faster completion and CursorHold trigger
+set updatetime=800             " CursorHold / diagnostics (was 300; lower = more CPU)
 set lazyredraw                 " Don't redraw during macros
 set ttyfast                    " Faster terminal connection
 set timeoutlen=1000            " Wait 1s for key sequence completion
@@ -107,6 +107,6 @@ set directory^=$HOME/.vim/tmp//
 " -----------------------------------------------------------------------------
 " CoC-specific Settings
 " -----------------------------------------------------------------------------
-let g:copilot_npx_command = 0
-let g:coc_node_path = substitute(system('which node'), '\n', '', '')
+" Pin Node so nvm shell switches don't break CoC mid-session
+let g:coc_node_path = expand('~/.nvm/versions/node/v20.19.6/bin/node')
 set runtimepath^=~/.coc-extensions/coc-solidity/packages/coc-solidity

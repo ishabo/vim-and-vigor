@@ -41,7 +41,7 @@ Plug 'christoomey/vim-tmux-navigator'               " Navigate between Vim and t
 " Language Support - Build Tools
 " -----------------------------------------------------------------------------
 Plug 'c9s/vim-makefile'                             " Makefile syntax
-Plug 'neovim/nvim-lspconfig'                        " LSP config
+" LSP is owned by CoC only (no nvim-lspconfig — avoids duplicate language servers)
 
 " -----------------------------------------------------------------------------
 " Language Support - JavaScript/TypeScript

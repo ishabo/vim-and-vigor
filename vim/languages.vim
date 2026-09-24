@@ -68,7 +68,22 @@ let g:coc_explorer_global_presets = {
 " -----------------------------------------------------------------------------
 let g:fzf_preview_window = ['right:50%', 'ctrl-_']
 let g:fzf_buffers_jump = 1  " Jump to existing window if buffer is already open
-command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '-U --ignore=dist --ignore=node_modules --nogroup --column --color', call('fzf#vim#with_preview', g:fzf_preview_window), <bang>0)
+" Prefer ripgrep (respects .gitignore). :Ag kept as an alias for muscle memory.
+" with_preview expects string args, not a List — splat via call().
+" rg exits 1 on zero matches; || true keeps fzf from showing "Command failed".
+if executable('rg')
+  command! -bang -nargs=* Rg
+    \ call fzf#vim#grep(
+    \   'rg --column --line-number --no-heading --color=always --smart-case -- '
+    \   .shellescape(<q-args>).' || true',
+    \   1,
+    \   call('fzf#vim#with_preview', g:fzf_preview_window),
+    \   <bang>0)
+else
+  command! -bang -nargs=* Rg
+    \ echoerr 'rg (ripgrep) not found — run: brew install ripgrep'
+endif
+command! -bang -nargs=* Ag execute 'Rg'.(<bang>0 ? '!' : '') <q-args>
 
 " -----------------------------------------------------------------------------
 " JavaScript/TypeScript

@@ -1,56 +1,32 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
-    "go",
     "javascript",
+    "javascriptreact",
     "typescript",
     "typescriptreact",
-    "json",
-    "javascriptreact",
     "typescript.tsx",
+    "json",
+    "jsonc",
     "graphql",
     "css",
-    "markdown",
-    "yaml",
-    "html",
     "scss",
     "less",
-    "jsonc",
-    "python",
-    "rust",
-    "vue",
-    "svelte",
-    "lua",
-    "sh",
-    "dockerfile"
+    "html",
+    "markdown",
+    "yaml",
+    "vue"
   ],
   "coc.preferences.formatOnType": false,
   "eslint.autoFixOnSave": true,
   "eslint.alwaysShowStatus": true,
   "eslint.workingDirectories": [{ "mode": "auto" }],
-  "eslint.options": { "overrideConfigFile": null },
-  "prettier.tabWidth": 4,
-  "prettier.singleQuote": true,
-  "prettier.semi": true,
-  "prettier.printWidth": 150,
-  "prettier.requireConfig": false,
-  "prettier.trailingComma": "es5",
-  "prettier.endOfLine": "lf",
-  "tsserver.trace.server": "verbose",
+  "prettier.requireConfig": true,
+  "tsserver.trace.server": "off",
+  "graphql.filetypes": ["graphql"],
+  "graphql.watcherPattern": "**/*.{graphql,gql}",
+  "graphql.debug": false,
   "go.goplsOptions": {
     "staticcheck": true
-  },
-  "languageserver": {
-    "go": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod"],
-      "trace.server": "verbose",
-      "filetypes": ["go"]
-    },
-    "rust": {
-      "command": "rust-analyzer",
-      "filetypes": ["rust"],
-      "rootPatterns": ["Cargo.toml"]
-    }
   },
   "diagnostic.errorSign": "✘",
   "diagnostic.warningSign": "",
@@ -101,8 +77,5 @@
   "typescript.suggestionActions.enabled": true,
   "typescript.preferences.importModuleSpecifier": "relative",
   "javascript.suggest.enabled": true,
-  "javascript.suggestionActions.enabled": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+  "javascript.suggestionActions.enabled": true
 }

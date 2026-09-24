@@ -39,14 +39,13 @@ nmap <space>f :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 
 " -----------------------------------------------------------------------------
-" Prettier Formatting
+" Formatting (project-owned via CoC prettier/eslint — no BufWritePre race)
 " -----------------------------------------------------------------------------
+" Manual full-buffer format when a project Prettier config exists
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-
-" Auto-format on save for specific file types
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.sol,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+" Format-on-save is configured only in nvim/coc-settings.json (single path)
 
 " -----------------------------------------------------------------------------
 " Visual Mode Enhancements
