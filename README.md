@@ -52,6 +52,8 @@ ln -sf ~/vim-config/nvim ~/.config/nvim
 - Vim 8.0+ or Neovim 0.5+
 - [CoC (Conquer of Completion)](https://github.com/neoclide/coc.nvim)
 - Node.js (for CoC)
+- Neovim only: [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) (inline blame + gutter), [diffview.nvim](https://github.com/sindrets/diffview.nvim) (side-by-side diffs); both need plenary
+- Full blame sidebar: fugitive `:Git blame` (`,gb`)
 
 You may need to install plugins after setup. Check the `vim/plugins.vim` file for the plugin manager and plugin list.
 

@@ -20,6 +20,23 @@ if has_treesitter then
     },
   }
 end
+
+local has_gitsigns, gitsigns = pcall(require, 'gitsigns')
+if has_gitsigns then
+  gitsigns.setup({
+    current_line_blame = true,
+    current_line_blame_opts = {
+      delay = 300,
+      virt_text_pos = 'eol',
+    },
+    current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary>',
+  })
+end
+
+local has_diffview, diffview = pcall(require, 'diffview')
+if has_diffview then
+  diffview.setup({})
+end
 EOF
 
 " Load CoC workspace folders from a VS Code .code-workspace file

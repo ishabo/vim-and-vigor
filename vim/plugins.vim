@@ -14,9 +14,15 @@ Plug 'github/copilot.vim'                           " GitHub Copilot
 " -----------------------------------------------------------------------------
 " Source Control
 " -----------------------------------------------------------------------------
-Plug 'airblade/vim-gitgutter'                       " Git diff in gutter
 Plug 'oguzbilgic/vim-gdiff'                         " Git diff viewer
 Plug 'tpope/vim-fugitive'                           " Git commands (:Git blame, :Git)
+if has('nvim')
+  Plug 'nvim-lua/plenary.nvim'                      " Lua utils (gitsigns/diffview)
+  Plug 'lewis6991/gitsigns.nvim'                    " Gutter diff + inline blame
+  Plug 'sindrets/diffview.nvim'                     " Side-by-side git diff UI
+else
+  Plug 'airblade/vim-gitgutter'                     " Git diff in gutter (Vim)
+endif
 
 " -----------------------------------------------------------------------------
 " File Navigation & Search

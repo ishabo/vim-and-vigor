@@ -24,10 +24,21 @@ map gn :bn<cr>
 map gp :bp<cr>
 
 " -----------------------------------------------------------------------------
-" Git Hunks Navigation
+" Git
 " -----------------------------------------------------------------------------
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
+if has('nvim')
+  nnoremap ]h :Gitsigns next_hunk<CR>
+  nnoremap [h :Gitsigns prev_hunk<CR>
+  nnoremap <leader>gb :Git blame<CR>
+  nnoremap <leader>gt :Gitsigns toggle_current_line_blame<CR>
+  nnoremap <leader>gd :DiffviewOpen<CR>
+  nnoremap <leader>gh :DiffviewFileHistory %<CR>
+  nnoremap <leader>gq :DiffviewClose<CR>
+else
+  nmap ]h <Plug>(GitGutterNextHunk)
+  nmap [h <Plug>(GitGutterPrevHunk)
+  nnoremap <leader>gb :Git blame<CR>
+endif
 
 " -----------------------------------------------------------------------------
 " CoC Explorer (File Tree)
